@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth 2.0 Login</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #loginBtn { margin-top: 50px; padding: 10px 20px; font-size: 18px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>OAuth 2.0 Authentication Flow</h1>
+    <button id="loginBtn">Login with Keycloak</button>
+
+    <script>
+        const clientID = 'frontend-client';  // Tu cliente de Keycloak
+        const redirectURI = 'http://localhost:3000/callback';  // La URL de redirección
+        const keycloakURL = 'http://localhost:8080/realms/OAuthRealm/protocol/openid-connect/auth';
+
+        document.getElementById('loginBtn').onclick = function() {
+            // Redirigir a Keycloak para autenticación
+            const authURL = `${keycloakURL}?response_type=code&client_id=${clientID}&redirect_uri=${redirectURI}&scope=openid user.read user.write`;
+            window.location.href = authURL;
+        };
+    </script>
+</body>
+</html>
