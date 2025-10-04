@@ -1,12 +1,12 @@
-# Título
+# OAuth 2.0 en la práctica: Client Credentials + Authorization Code (PKCE & Refresh)
 
-**OAuth 2.0 en la práctica: Client Credentials + Authorization Code (PKCE & Refresh)**
+**Rita Trindade, Brando Merchan**
 
 ---
 
 ## Slide 1 — Objetivo del video
 
-* Implementar **dos flujos**: Client Credentials (svc↔svc) y Authorization Code + **PKCE + Refresh** (usuario final).
+* Implementar **dos flujos**: Client Credentials (svc↔svc) y Authorization con Refreshtoken + **PKCE + Refresh** (usuario final).
 * Mostrar **tiempos de token**, **refresh** funcionando, **scopes** (read/write) y por qué el token de microservicio **no sirve** en frontend.
 
 **Notas del presentador**: Esta es la ruta al 5/5 en la rúbrica: AS configurado, API validando tokens, demo en Postman+SPA, HTTPS y scopes claros.
@@ -54,10 +54,9 @@ sequenceDiagram
 
 ---
 
-## Slide 5 — Flujo 2: Authorization Code + PKCE (+ Refresh)
+## Slide 5 — Flujo 2: Authorization + Refresh
 
 * Caso: **usuario final** (SPA/web/móvil).
-* SPA inicia login con **code_challenge (S256)**; al volver, canjea `code` con **code_verifier** por **access + refresh**.
 
 ```mermaid
 sequenceDiagram
