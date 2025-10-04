@@ -4,6 +4,18 @@
 
 ---
 
+## 📹 Video explicativo (10–15 min)
+
+Puedes ver la demostración completa del proyecto en el siguiente enlace:  
+🎥 [Video explicativo en YouTube](https://youtu.be/XIZK-PO6w4M?si=XuOw9H1utovhqzSD)
+## 🐳 Docker Hub
+
+Para clonar y ejecutar la imagen del proyecto:
+
+```bash
+docker pull ritatrcr/reverent-banzai:tagname
+
+
 ## Slide 1 — Objetivo del video
 
 * Implementar **dos flujos**: Client Credentials (svc↔svc) y Authorization con Refreshtoken + **PKCE + Refresh** (usuario final).
